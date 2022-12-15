@@ -1,0 +1,76 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      
+
+   
+<div >
+<table class="table">
+    <thead>
+      <tr>
+      
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">username</th>
+        <th scope="col">email</th>
+        <th scope="col">adresse</th>
+      </tr>
+      <tr *ngFor="let i of user ; let l=index">
+
+        <td>{{l}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.username}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.adresse}}</td>
+        <td>
+          <button class="btn btn-success" (click)="deletuser(i._id)"> Delete</button>
+          <button class="btn btn-success" (click)="update(i)" > Update</button>
+        </td>
+    
+      </tr>
+    </thead>
+    <tbody>
+     <tr>
+        <td></td> 
+     </tr>
+   
+    </tbody>
+  </table>
+ 
+</div> 
+
+</div>
+
+<div class="col">
+
+<form  [formGroup]="firstForm" (ngSubmit)="submit()">
+ 
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Name</label>
+    <input type="text" class="form-control" formControlName="Name" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">username</label>
+    <input type="text" class="form-control"  formControlName="Username">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email </label>
+    <input type="email" class="form-control"  aria-describedby="emailHelp" formControlName="email">
+    
+  </div>
+ 
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">adresse</label>
+    <input type="text" class="form-control"  formControlName="adresse" name="t4">
+  </div>
+  <button type="submit" class="btn btn-primary">Ajouter</button>
+  <a  class="btn btn-primary" (click)="remove()">clear</a>
+
+ 
+  
+</form>
+
+</div>
+  </div>
+</div>
